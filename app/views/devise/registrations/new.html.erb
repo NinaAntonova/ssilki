@@ -1,0 +1,44 @@
+<section class="container_form" style="margin-top: 50px;">
+
+<h1 class="form__header">Создайте аккаунт WebPapers</h1>
+<div class="form__subtitle"></div>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: false, autocomplete: "off", placeholder: "ted@nelson.com" %>
+  </div>
+
+  <div class="field">
+    <%= f.label value="Никнейм" %>
+    <%= f.text_field :nickname, autofocus: false, autocomplete: "off", placeholder: "tednelson" %>
+  </div>
+
+  <div class="field" style="margin-bottom: 10px;">
+    <%= f.label value="Пароль" do %>
+      <% if @minimum_password_length %>Пароль (не менее <%= @minimum_password_length %> символов)
+      <% end %>
+    <% end %>
+    <%= f.password_field :password, autocomplete: "off", placeholder: "••••••", id: "password"  %>
+    <%= image_tag "eye.svg", id: "togglePasswordVisibility" %>
+  </div>
+
+  <div class="field" style="margin-bottom: 10px;">
+    <%= f.label value="Повторите пароль" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "••••••", id: "password"%>
+    <%= image_tag "eye.svg", id: "togglePasswordVisibility" %>
+  </div>
+
+  <div class="form-board__buttons">
+    <div class="actions">
+      <%= f.submit "Присоединиться", :class => "button_ok button_disabled" %>
+    </div>
+  </div>
+
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+</section>

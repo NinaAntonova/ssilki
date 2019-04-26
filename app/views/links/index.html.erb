@@ -1,0 +1,51 @@
+<!-- <section class="section_linksWrapper">
+
+  <section class="section_boardInLinks">
+
+    <div class="section_boardInLinks__heading">
+
+      <div class="section_boardInLinks__heading_left">
+        <h1 class="section_boardInLinks__title"><%#= @board.title %></h1>
+        <div style="transform: translateY(3px); opacity: .3;"><%#= @board.links.count %></div>
+        <%# if @board.public %>
+          <div class="section__icon_public">
+            <%#= image_tag "share.svg" %>
+          </div>
+        <%# end %>
+      </div>
+
+      <div class="container__menu-dropdown">
+      <div class="more">
+        <div id="button-more" class="button-more">
+            <span class="button-more__dot"></span>
+            <span class="button-more__dot"></span>
+            <span class="button-more__dot"></span>
+        </div>
+
+        <div class="menu-dropdown menu-dropdown_edit-board">
+          <div class="menu-dropdown__list">
+            <li><%#= link_to 'Изменить', edit_board_path(@board) %></li>
+            <li>
+              <%# public = @board.public ? "Сделать приватной" : "Сделать публичной" %>
+              <%#= link_to public, publish_board_path(@board) %>
+            </li>
+            <li><%#= link_to 'Удалить', @board, method: :delete, data: { confirm: 'Вы уверены?' }, style: 'color: red' %></li>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    </div>
+
+    <p class="section_boardInLinks__description"><%#= @board.description %></p>
+
+  </section>
+
+  <section class="section_links" id="linksPage">
+      <%#= render 'newlink' %>
+      <%#= render @links %>
+  </section>
+
+  <div id="loadMoreBoards">Load More Links</div>
+
+</section> -->

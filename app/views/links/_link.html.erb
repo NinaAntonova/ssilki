@@ -1,0 +1,29 @@
+<div class="link__item" id="<%= dom_id(link)%>">
+  <%= link_to link.url, target: "_blank", class: "link" do %>
+    <div class="link__image">
+      <% if link.image.try(:url) %>
+        <%= image_tag link.image.url %>
+      <% else %>
+        <%= render "application/randomcover" %>
+      <% end %>
+    </div>
+    <div class="link__content">
+      <h2 class="link__title"><%= link.title %></h2>
+      <div class="link__description"><%= link.description %></div>
+    </div>
+  <% end %>
+
+  <% if can? :manage, link %>
+
+    <div class="link__settings">
+      <%= image_tag "settingsCard.svg" %>
+    </div>
+
+    <div class="menu-dropdown menu-dropdown_edit-link">
+      <div class="menu-dropdown__list">
+        <li><%= link_to 'Удалить', link, method: :delete, data: { confirm: 'Вы уверены?' }, style: 'color: red' %></li>
+      </div>
+    </div>
+  <% end %>
+
+</div>

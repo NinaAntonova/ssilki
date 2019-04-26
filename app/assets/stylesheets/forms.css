@@ -1,0 +1,382 @@
+*:focus {
+  outline: none;
+}
+
+.container_form {
+  margin: auto;
+  margin-top: 50px;
+  width: 474px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container_form.form__link {
+  margin-top: 0;
+}
+
+.form__header {
+  font-size: 34px;
+  margin-bottom: 40px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-board form {
+  margin-bottom: 60px;
+}
+
+label {
+  pointer-events: none;
+  transition: .3s all ease;
+  font-size: 14px;
+  font-weight: 100;
+  color: #272727;
+  padding-bottom: 6px;
+}
+
+input, textarea {
+  -webkit-appearance: textfield;
+  background-color: white;
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+}
+
+textarea {
+  height: 60px;
+}
+
+input.section_board__description:focus::placeholder {
+  color: transparent;
+}
+
+input.form-board {
+  height: 50px;
+  width: 640px;
+  border: none;
+}
+
+input.form-link {
+  height: 50px;
+  width: 640px;
+  border: none;
+  font-size: 34px;
+  line-height: 1.2em;
+  padding: 15px 0;
+  border-bottom: 2px solid #E5E5E5;
+  transition: border-bottom .2s ease;
+}
+
+input.form-link:focus {
+  border-bottom: 2px solid #272727;
+}
+
+.container_form .field {
+  margin-bottom: 40px;
+}
+
+.actions input {
+  width: 176px;
+  height: 50px;
+  border-radius: 2px;
+  border: 2px transparent;
+  color: #fff;
+  background-color: #272727;
+  font-size: 18px !important;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.actions input:hover {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #272727;
+}
+
+.button_back {
+  border: none;
+  font-weight: 500;
+  color: #ccc;
+  font-size: 18px;
+  width: 176px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity .2s ease;
+  cursor: pointer;
+}
+
+.button_back:hover {
+  opacity: .6;
+}
+
+.form-board__buttons {
+  display: flex;
+  margin: 40px 0 60px;
+}
+
+.form-board__buttons a {
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+/* Select 2 */
+
+select {
+  background: transparent !important;
+}
+
+.select2 {
+  width: 474px !important;
+  height: 40px !important;
+  outline: none;
+  border: 1px solid #ссс;
+  font-size: 22px;
+  background: transparent !important;
+}
+
+.select2-selection {
+  border: transparent 1px !important;
+}
+
+.select2-selection--single {
+  height: 38px;
+}
+
+.select2-selection__clear {
+  top: -2px !important;
+  font-weight: normal !important;
+  display: none;
+}
+
+.select2-dropdown {
+  font-size: 16px;
+  border: 1px solid #E5E5E5 !important;
+}
+
+.select2-link_board_id-container {
+  display: inline;
+}
+
+.select2-search--dropdown {
+  padding: 5px !important;
+  width: 90%;
+}
+
+.select2-search__field {
+  height: 40px;
+  width: 670px;
+  line-height: 40px;
+  font-size: 24px;
+  border: none !important;
+}
+
+option {
+  font-size: 24px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: #000;
+  line-height: 38px;
+}
+
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+  border-color: transparent;
+  transform: rotate(180deg);
+}
+
+b {
+  border-left: 6px solid transparent !important;
+  border-right: 6px solid transparent !important;
+  border-top: 6px solid #272727 !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  border-style: transparent;
+  transition: all .2s ease;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  right: -2px;
+}
+
+.select2-selection--single .select2-selection__rendered {
+  padding-left: 0px !important;
+  padding-right: 30px !important;
+}
+
+.select2-results__option {
+  font-size: 22px !important;
+  color: #888888 !important;
+  transition: color .3s ease;
+}
+
+.select2-results__option:hover {
+  color: #272727 !important;
+}
+
+.select2-results__option--highlighted {
+  background-color: transparent !important;
+  color: #272727 !important;
+}
+
+.select2-results__option[aria-selected=true] {
+  background-color: #f5f5f5 !important;
+}
+
+/* New Link Popup */
+
+.popup_link-form {
+  position: absolute;
+  width: 956px;
+  height: 420px;
+  background: transparent;
+  margin: auto;
+  border-radius: 2px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.form__link form {
+  margin: auto;
+  margin-top: 65px;
+}
+
+.popup_link-form .field {
+  background: transparent;
+}
+
+.menubar.underpopup {
+  /* opacity: 0; */
+  opacity: .2;
+  filter: blur(10px);
+}
+
+body.underpopup {
+  /* padding-top: 60px; */
+  overflow-y: hidden;
+}
+
+.index_board.underpopup {
+  opacity: .3;
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+/* Search */
+
+.searchTextField {
+  background-color: #F9F9F9;
+  height: 36px;
+  width: 474px;
+  border-radius: 20px;
+  padding-left: 20px;
+  font-size: 14px;
+}
+
+/* Registration */
+
+form.new_user {
+  width: 474px;
+  margin: auto;
+}
+
+form.new_user .field,
+.popup_link-form .field,
+form.edit_user .field {
+  width: 474px;
+}
+
+form.new_user label {
+  padding-bottom: 6px;
+  transition: all .2s ease;
+}
+
+form.new_user input,
+.popup_link-form input,
+form.edit_user input {
+  width: 474px;
+  border: none;
+  border-bottom: 2px solid #E5E5E5;
+  padding-bottom: 5px;
+  margin-top: 10px;
+  font-size: 22px;
+  transition: border-bottom .2s ease;
+  background: transparent;
+}
+
+form.new_user input:focus,
+form.edit_user input:focus {
+  border-bottom: 2px solid #272727;
+}
+
+form.new_user input[type="checkbox"] {
+  border: none;
+}
+
+form.new_user .actions {
+  margin: 30px 0;
+}
+
+form.new_user input[type="submit"],
+.popup_link-form input[type="submit"],
+form.edit_user input[type="submit"] {
+  border: 2px solid transparent;
+  width: 176px;
+  transition: all .2s ease;
+  margin: auto;
+}
+
+input:disabled {
+  border: 2px solid #ccc !important;
+  background-color: #fff;
+  color: #ccc;
+}
+
+input:disabled:hover {
+  color: #ccc !important;
+}
+
+form.new_user input[type="submit"]:hover,
+.popup_link-form input[type="submit"]:hover,
+form.edit_user input[type="submit"]:hover {
+  border: 2px solid #272727;
+}
+
+.registrations.new input[type="submit"] {
+  width: 264px;
+}
+
+.link_new-action {
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+#togglePasswordVisibility {
+  position: relative;
+  right: -450px;
+  top: -30px;
+  transition: all .2s ease;
+}
+
+#togglePasswordVisibility:hover {
+  cursor: pointer;
+  fill: #272727;
+}
+
+/* File Uploader */
+
+input[type="file"] {
+  display: none;
+}

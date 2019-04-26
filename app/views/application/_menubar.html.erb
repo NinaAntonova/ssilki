@@ -1,0 +1,67 @@
+<header class="menubar nav-down">
+  <input id="dark-mode" class="dark-mode-checkbox visually-hidden" type="checkbox">
+
+  <div class="theme-container grow">
+    <label class="dark-mode-label" for="dark-mode">
+      Dark mode
+    </label>
+
+    <div class="menubar_left">
+
+      <%# if user_signed_in? %>
+        <%= link_to boards_path do %>
+          <%= image_tag "logosmall.svg", class: "link_logo" %>
+        <% end %>
+      <%# end %>
+
+    </div>
+
+    <div class="menubar_middle">
+      <div><%=link_to "Все", :boards_controller => "boards" %></div>
+      <div><%=link_to "Личные", :boards_controller => "boards", :query => "private" %></div>
+      <div><%=link_to "Публичные", :boards_controller => "boards", :query => "published" %></div>
+      <div><%=link_to "Общий доступ", :boards_controller => "boards", :query => "collaborative" %></div>
+    </div>
+
+    <div class="menubar_right">
+
+      <% if user_signed_in? %>
+
+      <%= render "search" %>
+
+      <div class="icon-wrapper">
+        <%= image_tag "plus_black.svg", class: "icon_add" %>
+      </div>
+      <div class="menu-dropdown menu-dropdown_add menu">
+        <div class="menu-dropdown__username">Создать</div>
+        <div class="menu-dropdown__list">
+          <li><%= link_to 'Добавить подборку', new_board_path, class: "button_new-board", remote: true %></li>
+          <li><%= link_to 'Добавить ссылку', new_link_path, class: "button_new-link", remote: true %></li>
+        </div>
+      </div>
+
+      <% end %>
+
+      <% if user_signed_in? %>
+        <div class="avatar">
+          <div class="image_avatar">
+            <% if current_user.avatar? %>
+              <%= image_tag(current_user.avatar_url) %>
+            <% else %>
+              <%= render "application/avatar" %>
+            <% end %>
+          </div>
+          <div class="menu-dropdown menu-dropdown_edit menu">
+            <span class="menu-dropdown__caret"></span>
+            <div class="menu-dropdown__username">@<%= current_user.nickname %></div>
+            <div class="menu-dropdown__list">
+              <li><%= link_to 'Настройки', edit_user_by_nickname_path(current_user.nickname) %></li>
+              <li><%= link_to "Выйти", destroy_user_session_path, method: :delete %></li>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  <div>
+</header>

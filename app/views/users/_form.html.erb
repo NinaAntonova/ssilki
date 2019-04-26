@@ -1,0 +1,38 @@
+<%= form_with model: user, local: "true", class: "edit_user" do |form| %>
+
+  <% if user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+        <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+    <%#= form.file_field :image %>
+
+      <%# if @user.avatar? %>
+        <%#= image_tag(@user.avatar_url) %>
+      <%# else %>
+        <%#= render "application/avatar"  %>
+      <%# end %>
+
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.text_field :email %>
+    </div>
+
+    <div class="field">
+      <%= form.label value="Никнейм" %>
+      <%= form.text_field :nickname %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit value="Обновить" %>
+    </div>
+
+<% end %>

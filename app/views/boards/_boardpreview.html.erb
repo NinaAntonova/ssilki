@@ -1,0 +1,13 @@
+<section class="boardSearchPreview link__item">
+  <%= link_to @board, target: "_blank" do %>
+
+    <div class="link__content">
+      <h1 class="section_boardpreview__title link__title"><%= link_to board.title, board_path(board) %></h1>
+      <p class="section_boardpreview__description link__description"><%= board.description %></p>
+
+      <% public = board.public ? "Публичная" : "Приватная" %>
+      <div class="link__number"><%= public.to_s + " • " + board.links.count.to_s %></div>
+    </div>
+
+  <% end %>
+</section>

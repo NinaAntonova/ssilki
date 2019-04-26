@@ -1,0 +1,13 @@
+<main class="main">
+
+  <%= render 'boardheader', board: @board %>
+
+  <section class="section_links" id="linksPage">
+    <%= render 'links/newlink' %>
+    <%= render @links %>
+    <%= render @user.collaborations %>
+  </section>
+
+  <div id="loadMoreBoards"></div>
+
+</main>
