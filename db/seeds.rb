@@ -106,15 +106,15 @@ def create_links
 end
 
 def create_shared_board
-    user = User.all.sample
-    collaborator = User.all.sample
+  user = User.all.sample
+  collaborator = User.all.sample
 
-    if user.id != collaborator.id
-      board = user.boards.sample
-      collaboration = collaborator.collaborations.create!(board_id: board.id)
+  if user.id != collaborator.id
+    board = user.boards.sample
+    collaboration = collaborator.collaborations.create!(board_id: board.id)
 
-      puts "Collaborator with email #{collaborator.email} just added to the board with title #{board.title}"
-    end
+    puts "Collaborator with email #{collaborator.email} just added to the board with title #{board.title}"
+  end
 end
 
 seed_data
